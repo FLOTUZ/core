@@ -24,7 +24,7 @@ function Productos() {
 
             <NavBar />
 
-            <h1 class="Title" title="Productos">Productos</h1>
+            <h1 className="Title" title="Productos">Productos</h1>
             <form busqueda>
                 <input type="text" placeholder="Buscar..." />
                 <Button variant="contained"
