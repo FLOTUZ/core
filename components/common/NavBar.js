@@ -1,12 +1,15 @@
-import { Navbar, Nav, Form, Button } from "react-bootstrap";
+import { Navbar, Nav, Form, Button, NavDropdown  } from "react-bootstrap";
 
 function NavBar() {
   return (
     <>
-      <Navbar bg="warning" variant="dark">
+      <Navbar sticky="top" bg="warning" variant="dark">
         <Nav className="mr-auto">
           <Nav.Link href="/home">Home</Nav.Link>
-          <Nav.Link href="/productos">Productos</Nav.Link>
+          <NavDropdown title="Productos" id="navbarScrollingDropdown">
+            <NavDropdown.Item href="/productos">Productos</NavDropdown.Item>
+            <NavDropdown.Item href="/productos/nuevo">Nuevo</NavDropdown.Item>
+          </NavDropdown>
           <Nav.Link href="/pedidos">Pedidos</Nav.Link>
         </Nav>
         <Form>
