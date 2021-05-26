@@ -40,7 +40,38 @@ function Body(){
           <li><Cards text={text[3]} value={value[3]}/></li>
         </ul>
       </div>
+      <div>
+        <Graph/>
+      </div>
     </body>
+  );
+}
+
+function Graph(){
+  return(
+    <Line
+      data={{
+        labels: ['Red', 'Blue'],
+        datasets: [{
+            label: '# of Votes',
+            data: [0, 10],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)'
+            ],
+            borderWidth: 1
+        }]
+      }}
+      height={100}
+      width={200}
+      options={{
+        mantainAspectRatio: false,
+      }}
+    />
   );
 }
 
