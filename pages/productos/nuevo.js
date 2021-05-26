@@ -1,5 +1,9 @@
 import NavBar from "@common/NavBar";
 
+import { useState } from "react";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
+
 import {
   Breadcrumb,
   Button,
@@ -12,6 +16,8 @@ import {
 } from "react-bootstrap";
 
 function Nuevo() {
+  const [value, setValue] = useState("");
+
   return (
     <>
       <NavBar />
@@ -48,25 +54,32 @@ function Nuevo() {
                         placeholder="Nombre de producto"
                       />
                       <Form.Label>Nombre de producto en aspel</Form.Label>
-                      <Form.Control type="text" placeholder="Nombre de producto en aspel" />
+                      <Form.Control
+                        type="text"
+                        placeholder="Nombre de producto en aspel"
+                      />
                     </Form>
                   </Col>
                   <Col>
-                  <Image
+                    <Image
                       src="../headphones.jpg"
                       alt="Audifonos Unsplash"
                       thumbnail="true"
-                      height='100px'
-                      width='109px'
+                      height="100px"
+                      width="109px"
                       rounded
                     />
-                    <Form.File/>
+                    <Form.File />
                   </Col>
                 </Row>
               </Card.Body>
             </Card>
           </Col>
         </Row>
+      </Container>
+      <br/>
+      <Container>
+        <ReactQuill theme="snow" value={value} onChange={setValue} />
       </Container>
     </>
   );
