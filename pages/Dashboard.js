@@ -7,8 +7,8 @@ import { Doughnut, Bar, Line } from 'react-chartjs-2';
 function Dashboard() {
   return (
     <>
-      <StyleTitle />
       <NavBar/>
+      <StyleTitle />
       <Body/>
     </>
   );

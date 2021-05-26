@@ -5,7 +5,7 @@ function NavBar() {
     <>
       <Navbar sticky="top" bg="warning" variant="dark">
         <Nav className="mr-auto">
-          <Nav.Link href="/home">Home</Nav.Link>
+          <Nav.Link href="/Dashboard">Dashboard</Nav.Link>
           <NavDropdown title="Productos" id="navbarScrollingDropdown">
             <NavDropdown.Item href="/productos">Productos</NavDropdown.Item>
             <NavDropdown.Item href="/productos/nuevo">Nuevo</NavDropdown.Item>
