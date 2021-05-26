@@ -2,6 +2,7 @@ import Head from "next/head";
 import NavBar from "@common/NavBar";
 import { Card } from "react-bootstrap";
 import styles from "../styles/Dashboard.module.css";
+import { Doughnut, Bar, Line } from 'react-chartjs-2';
 
 function Dashboard() {
   return (
