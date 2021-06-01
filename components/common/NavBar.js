@@ -57,7 +57,7 @@ function NavBar() {
     },
   ];
   return (
-    <ProSidebar collapsed={collapsed} width="200px">
+    <ProSidebar collapsed={collapsed} width="200px" className={styles.proSideBar}>
       <Menu iconShape="square">
         {/*Recorremos la lista de rutas*/}
         {rutas.map((r) => {

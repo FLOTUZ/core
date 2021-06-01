@@ -2,6 +2,9 @@
     list-style-type: none; 
 }
 
+.proSideBar{
+    height: 700px;
+}
 .button{
     height: 3rem;
     width: 3rem;

@@ -26,7 +26,7 @@ function Nuevo() {
             <Button variant="outline-danger">Descartar</Button>{" "}
           </Col>
 
-          <Col lg="1">
+          <Col>
             <Button variant="outline-success">Publicar</Button>
           </Col>
         </Row>

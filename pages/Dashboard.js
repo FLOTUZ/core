@@ -1,15 +1,16 @@
-import { Card } from "react-bootstrap";
+import { Card, Col } from "react-bootstrap";
 import styles from "../styles/Dashboard.module.css";
-import { Doughnut, Bar, Line } from 'react-chartjs-2';
-import DefaultLayout from "components/layouts/DefaultLayout";
+import { Doughnut, Bar, Line } from "react-chartjs-2";
 import Head from "next/head";
+import NavBar from "@common/NavBar";
 
 function Dashboard() {
   return (
-    <DefaultLayout>
+    <>
       <StyleTitle />
-      <Body/>
-    </DefaultLayout>
+      <NavBar />
+      <Body />
+    </>
   );
 }
 
@@ -17,11 +18,6 @@ function StyleTitle() {
   return (
     <Head>
       <title>Dashboard</title>
-      <link
-        rel="stylesheet"
-        href="../styles/Dashboard.module.css"
-        type="text/css"
-      ></link>
     </Head>
   );
 }
