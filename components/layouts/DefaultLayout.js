@@ -16,6 +16,7 @@ function DefaultLayout(props) {
           {props.children}
         </Col>
       </Row>
+
     </>
   );
 }

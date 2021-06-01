@@ -1,9 +1,3 @@
-import NavBar from "@common/NavBar";
-
-import { useState } from "react";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
-
 import {
   Breadcrumb,
   Button,
@@ -14,13 +8,12 @@ import {
   Card,
   Image,
 } from "react-bootstrap";
+import DefaultLayout from "components/layouts/DefaultLayout";
 
 function Nuevo() {
-  const [value, setValue] = useState("");
 
   return (
-    <>
-      <NavBar />
+    <DefaultLayout>
       <Breadcrumb>
         <Breadcrumb.Item href="/productos">Productos</Breadcrumb.Item>
         <Breadcrumb.Item active>Nuevo</Breadcrumb.Item>
@@ -79,9 +72,9 @@ function Nuevo() {
       </Container>
       <br/>
       <Container>
-        <ReactQuill theme="snow" value={value} onChange={setValue} />
+        
       </Container>
-    </>
+    </DefaultLayout>
   );
 }
 
