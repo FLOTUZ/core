@@ -20,9 +20,12 @@ import {
 } from "react-pro-sidebar";
 import "react-pro-sidebar/dist/css/styles.css";
 
+import {useRouter} from "next/router"
+
 function NavBar() {
   const [collapsed, setCollapsed] = useState(false);
-
+  const router = useRouter()
+  
   //Aca pon la ruta como un objeto
   let rutas = [
     {
@@ -106,7 +109,7 @@ function NavBar() {
         </button>
 
         {/* Boton de configuracion*/}
-        <button className={styles.button}>
+        <button className={styles.button} onClick={()=>{router.push("/configuraciones")}} >
           <FiSettings color={"white"} />
         </button>
       </SidebarFooter>
