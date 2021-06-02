@@ -1,13 +1,15 @@
 .elements{
-    margin: 2% 5%;
+    margin: 2% 1%;
+    width: auto;
+}
+
+.containerMain{
+    margin: 0px 5%;
+    width: 90%;
 }
 
 .cards{
-    list-style: none;
-    display: flex;
-    padding: 0%;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    text-align: -webkit-center;
 }
 
 .card{

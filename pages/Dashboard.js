@@ -1,16 +1,19 @@
 import styles from "../styles/Dashboard.module.css";
 import Head from "next/head";
-import NavBar from "@common/NavBar";
-import { Card } from "react-bootstrap";
+import { Card, Container, Row, Col } from "react-bootstrap";
 import { Line } from 'react-chartjs-2';
 import Table from 'react-bootstrap/Table';
+import DefaultLayout from "components/layouts/DefaultLayout";
 
 function Dashboard() {
   return (
     <>
-      <StyleTitle />
-      <NavBar />
-      <Body />
+      <DefaultLayout>
+        <div className={styles.containerMain}>
+          <StyleTitle />
+          <Body/>
+        </div>
+      </DefaultLayout>
     </>
   );
 }
@@ -35,44 +38,44 @@ function Body() {
   return (
     <div className={styles.elements}>
       <div>
-        <ul className={styles.cards}>
-          <li>
+        <Row className={styles.cards}>
+          <Col>
             <Cards text={text[0]} value={value[0]} />
-          </li>
-          <li>
+          </Col>
+          <Col>
             <Cards text={text[1]} value={value[1]} />
-          </li>
-          <li>
+          </Col>
+          <Col>
             <Cards text={text[2]} value={value[2]} />
-          </li>
-          <li>
+          </Col>
+          <Col>
             <Cards text={text[3]} value={value[3]} />
-          </li>
-        </ul>
+          </Col>
+        </Row>
       </div>
       <div className={styles.box}>
-        <Graph/>
+        <Graph />
       </div>
       <div className={styles.box}>
         <div>
           <h2>Ultimos productos vendidos: Amazon</h2>
           <p>Monto: </p>
         </div>
-        <AmazonSells/>
+        <AmazonSells />
       </div>
       <div className={styles.box}>
         <div>
           <h2>Ultimos productos vendidos: Mercado Libre</h2>
           <p>Monto: </p>
         </div>
-        <MercadoLibreSells/>
+        <MercadoLibreSells />
       </div>
       <div className={styles.box}>
         <div>
           <h2>Ultimos productos vendidos: WooCommerce</h2>
           <p>Monto: </p>
         </div>
-        <WooCommerceSells/>
+        <WooCommerceSells />
       </div>
     </div>
   );
@@ -107,7 +110,7 @@ function Graph() {
 
 function Cards({ text, value }) {
   return (
-    <Card style={{ width: "18rem" }} className={styles.card}>
+    <Card style={{ width: "18rem", height: "8rem" }}>
       <Card.Body>
         <Card.Title>{text}</Card.Title>
         <Card.Text style={{ textAlign: "center" }}>{value}</Card.Text>
