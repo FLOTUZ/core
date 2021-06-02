@@ -1,8 +1,9 @@
-import { Card, Col } from "react-bootstrap";
 import styles from "../styles/Dashboard.module.css";
-import { Doughnut, Bar, Line } from "react-chartjs-2";
 import Head from "next/head";
 import NavBar from "@common/NavBar";
+import { Card } from "react-bootstrap";
+import { Line } from 'react-chartjs-2';
+import Table from 'react-bootstrap/Table';
 
 function Dashboard() {
   return (
@@ -32,7 +33,7 @@ function Body() {
   let value = [60, 16, 43, 64];
 
   return (
-    <body className={styles.body}>
+    <div className={styles.elements}>
       <div>
         <ul className={styles.cards}>
           <li>
@@ -49,10 +50,31 @@ function Body() {
           </li>
         </ul>
       </div>
-      <div>
-        <Graph />
+      <div className={styles.box}>
+        <Graph/>
       </div>
-    </body>
+      <div className={styles.box}>
+        <div>
+          <h2>Ultimos productos vendidos: Amazon</h2>
+          <p>Monto: </p>
+        </div>
+        <AmazonSells/>
+      </div>
+      <div className={styles.box}>
+        <div>
+          <h2>Ultimos productos vendidos: Mercado Libre</h2>
+          <p>Monto: </p>
+        </div>
+        <MercadoLibreSells/>
+      </div>
+      <div className={styles.box}>
+        <div>
+          <h2>Ultimos productos vendidos: WooCommerce</h2>
+          <p>Monto: </p>
+        </div>
+        <WooCommerceSells/>
+      </div>
+    </div>
   );
 }
 
@@ -91,6 +113,87 @@ function Cards({ text, value }) {
         <Card.Text style={{ textAlign: "center" }}>{value}</Card.Text>
       </Card.Body>
     </Card>
+  );
+}
+
+function AmazonSells(){
+  return (
+    <div>
+      <Table striped bordered hover>
+        <tbody>
+          <tr>
+            <td>Bocinas</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>Proyector</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>Teatro en casa</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>Subwoofer Yamaha</td>
+            <td>1</td>
+          </tr>
+        </tbody>
+      </Table>
+    </div>
+  );
+}
+
+function MercadoLibreSells(){
+  return (
+    <div>
+      <Table striped bordered hover>
+        <tbody>
+          <tr>
+            <td>Bocinas</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>Proyector</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>Teatro en casa</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>Subwoofer Yamaha</td>
+            <td>1</td>
+          </tr>
+        </tbody>
+      </Table>
+    </div>
+  );
+}
+
+function WooCommerceSells(){
+  return (
+    <div>
+      <Table striped bordered hover>
+        <tbody>
+          <tr>
+            <td>Bocinas</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>Proyector</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>Teatro en casa</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>Subwoofer Yamaha</td>
+            <td>1</td>
+          </tr>
+        </tbody>
+      </Table>
+    </div>
   );
 }
 
