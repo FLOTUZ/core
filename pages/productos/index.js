@@ -1,10 +1,96 @@
 import Head from "next/head";
 import NavBar from "@common/NavBar";
-import Table from "react-bootstrap/Table";
-import Pagination from "react-bootstrap/Pagination";
+import React from 'react';
+import  MDBDataTable  from 'mdbreact';
 import { Button, Breadcrumb } from "react-bootstrap";
 
 function Productos() {
+  const DatatablePage = () => {
+    const data = {
+      columns: [
+        {
+          label: 'Name',
+          field: 'name',
+          sort: 'asc',
+          width: 150
+        },
+        {
+          label: 'Position',
+          field: 'position',
+          sort: 'asc',
+          width: 270
+        },
+        {
+          label: 'Office',
+          field: 'office',
+          sort: 'asc',
+          width: 200
+        },
+        {
+          label: 'Age',
+          field: 'age',
+          sort: 'asc',
+          width: 100
+        },
+        {
+          label: 'Start date',
+          field: 'date',
+          sort: 'asc',
+          width: 150
+        },
+        {
+          label: 'Salary',
+          field: 'salary',
+          sort: 'asc',
+          width: 100
+        }
+      ],
+      rows: [
+        {
+          name: 'Tiger Nixon',
+          position: 'System Architect',
+          office: 'Edinburgh',
+          age: '61',
+          date: '2011/04/25',
+          salary: '$320'
+        },
+        {
+          name: 'Garrett Winters',
+          position: 'Accountant',
+          office: 'Tokyo',
+          age: '63',
+          date: '2011/07/25',
+          salary: '$170'
+        },
+        {
+          name: 'Ashton Cox',
+          position: 'Junior Technical Author',
+          office: 'San Francisco',
+          age: '66',
+          date: '2009/01/12',
+          salary: '$86'
+        },
+        {
+          name: 'Donna Snider',
+          position: 'Customer Support',
+          office: 'New York',
+          age: '27',
+          date: '2011/01/25',
+          salary: '$112'
+        }
+      ]
+    };
+
+    return (
+      <MDBDataTable
+        striped
+        bordered
+        hover
+        data={data}
+      />
+    );
+
+  }
   return (
     <div>
       <Head>
@@ -27,56 +113,11 @@ function Productos() {
           Descargar Excel{" "}
         </Button>
       </form>
-      <Table striped bordered hover>
-        <thead>
-          <p>Todos</p>
-          <tr>
-            <th>Nombre del Producto</th>
-            <th>Precio</th>
-            <th>Inventario</th>
-            <th>Publicado en..</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Par De Bocinas Yamaha NS-WA150 Blancas</td>
-            <td>$550</td>
-            <td>2</td>
-            <td>AMAZON</td>
-          </tr>
-          <tr>
-            <td>Proyector Benq MW550</td>
-            <td>$10,550</td>
-            <td>15</td>
-            <td>TODOS</td>
-          </tr>
-          <tr>
-            <td>Teatro 5.0 Wharfedale Crystal Cr4.3</td>
-            <td>$2,300</td>
-            <td>4</td>
-            <td>MERCADO LIBRE</td>
-          </tr>
-          <Pagination size="sm">
-            <Pagination.First />
-            <Pagination.Prev />
-            <Pagination.Item>{1}</Pagination.Item>
-            <Pagination.Ellipsis />
-
-            <Pagination.Item>{10}</Pagination.Item>
-            <Pagination.Item>{11}</Pagination.Item>
-            <Pagination.Item active>{12}</Pagination.Item>
-            <Pagination.Item>{13}</Pagination.Item>
-            <Pagination.Item disabled>{14}</Pagination.Item>
-
-            <Pagination.Ellipsis />
-            <Pagination.Item>{20}</Pagination.Item>
-            <Pagination.Next />
-            <Pagination.Last />
-          </Pagination>
-        </tbody>
-      </Table>
+      <DatatablePage/>
     </div>
+    
   );
+  
 }
 
 export default Productos;
