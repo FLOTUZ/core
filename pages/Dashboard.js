@@ -3,13 +3,15 @@ import styles from "../styles/Dashboard.module.css";
 import { Doughnut, Bar, Line } from "react-chartjs-2";
 import Head from "next/head";
 import NavBar from "@common/NavBar";
+import DefaultLayout from "components/layouts/DefaultLayout";
 
 function Dashboard() {
   return (
     <>
-      <StyleTitle />
-      <NavBar />
-      <Body />
+      <DefaultLayout>
+        <StyleTitle />
+        <Body />
+      </DefaultLayout>
     </>
   );
 }
