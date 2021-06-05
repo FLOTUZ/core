@@ -1,8 +1,44 @@
-.button{
+.containerUsers {
+    padding: 150px; 
+    padding-left: 20%;
+    padding-top: 5%;
+  }
+  
+
+  .button{
     height: 10rem;
     width: 10rem;
+    padding: 5%;
+    margin: 10%;
+    border-radius: 10%;
+    background: white !important;
 }
 
+
 .lay{
-    border: 1px solid aqua;
+    padding: 150px; 
+    padding-left: 20%;
+    padding-top: 5%;
 }
+
+.navbar{
+position: absolute;
+width: 1360px;
+height: 68px;
+left: 45px;
+top: 19px;}
+
+.core{
+    position: absolute;
+    width: 112px;
+    height: 112px;
+    left: 20px;
+    top: 20px;
+    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.25));
+
+}
+.h1{
+padding: 20px;
+}
+
+
