@@ -1,6 +1,5 @@
 import Table from "react-bootstrap/Table";
 import React from "react";
-import FigureCaption from "react-bootstrap/FigureCaption";
 import DefaultLayout from "components/layouts/DefaultLayout";
 import styles from "./Index.module.css";
 import Button from "react-bootstrap/Button";
