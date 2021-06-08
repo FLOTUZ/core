@@ -43,8 +43,18 @@ function NavBar() {
       subroutes: [
         {
           key: 1,
+          name: "Productos",
+          route: "/productos",
+        },
+        {
+          key: 2,
           name: "Agregar",
           route: "/productos/nuevo",
+        },
+        {
+          key: 3,
+          name: "Detalles",
+          route: "/productos/detalles",
         },
       ],
     },

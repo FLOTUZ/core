@@ -15,7 +15,7 @@ import {
 
 function Detalles() {
     return (
-        <DefaultLayout>
+        <>
             <Breadcrumb>
                 <Breadcrumb.Item href="/productos">Productos</Breadcrumb.Item>
                 <Breadcrumb.Item active>detalles</Breadcrumb.Item>
@@ -99,7 +99,7 @@ function Detalles() {
             </Container>
 
 
-        </DefaultLayout>
+        </>
     );
 }
 
@@ -110,14 +110,14 @@ function InformacionGeneral() {
                 <Col>
                     <Form>
                         <Form.Label>Text label</Form.Label>
-                        <select class="form-control ds-input">
+                        <select className="form-control ds-input">
                             <option>Producto/Servicio/Kit/Grupo de productos</option>
                             <option>....</option>
                         </select>
                     </Form>
                     <Form>
                         <Form.Label>Categorías del producto</Form.Label>
-                        <select class="form-control ds-input">
+                        <select className="form-control ds-input">
                             <option>Todos/Audio/Audifonos</option>
                             <option>....</option>
                         </select>
@@ -128,9 +128,9 @@ function InformacionGeneral() {
                             type="text"
                             placeholder="Sin texto" />
                     </Form>
-                    <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Descripción corta</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <div className="form-group">
+                        <label htmlFor="exampleFormControlTextarea1">Descripción corta</label>
+                        <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
                 </Col>
 
@@ -225,7 +225,7 @@ function Publicaciones() {
                 <Col>
                     <Form>
                         <Form.Label>Modo de envio</Form.Label>
-                        <select class="form-control ds-input">
+                        <select className="form-control ds-input">
                             <option>No especificado</option>
                             <option>....</option>
                         </select>
@@ -234,7 +234,7 @@ function Publicaciones() {
                 <Col>
                     <Form>
                         <Form.Label>Envío gratis</Form.Label>
-                        <select class="form-control ds-input">
+                        <select className="form-control ds-input">
                             <option>Seleccione...</option>
                             <option>....</option>
                         </select>
