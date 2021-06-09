@@ -10,7 +10,7 @@ function Informacion() {
                 <Breadcrumb.Item href="/configuraciones">Configuraciones</Breadcrumb.Item>
                 <Breadcrumb.Item active>Informacion del sistema</Breadcrumb.Item>
             </Breadcrumb>
-        <div className="card">
+        <div className={styles.card}>
           <h3> Amazon</h3>
           <label for="inputPassword5" class="form-label"></label>
           <input

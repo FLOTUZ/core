@@ -7,7 +7,6 @@ import { Breadcrumb } from "react-bootstrap";
 
 function Configuraciones() {
   return (
-  
     <div className={styles.container}>
       <h1>Configuraciones</h1>
       <Breadcrumb>
@@ -69,34 +68,42 @@ function Configuraciones() {
         </Row>
         <Row>
           <Col>
-            <Button className={styles.button} variant="outline-warning">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="100"
-                height="100"
-                fill="currentColor"
-                className="bi bi-bell-fill"
-                viewBox="0 0 16 16"
-              >
-                <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
-              </svg>
-              <h3>Notificaciones</h3>
-            </Button>{" "}
+            <Link href="/configuraciones/notificaciones">
+              <a>
+                <Button className={styles.button} variant="outline-warning">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="100"
+                    height="100"
+                    fill="currentColor"
+                    className="bi bi-bell-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
+                  </svg>
+                  <h3>Notificaciones</h3>
+                </Button>{" "}
+              </a>
+            </Link>
           </Col>
           <Col>
-            <Button className={styles.button} variant="outline-warning">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="100"
-                height="100"
-                fill="currentColor"
-                className="bi bi-shield-fill"
-                viewBox="0 0 16 16"
-              >
-                <path d="M5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 62.456 62.456 0 0 1 5.072.56z" />
-              </svg>
-              <h3>Seguridad</h3>
-            </Button>{" "}
+            <Link href="/configuraciones/seguridad">
+              <a>
+                <Button className={styles.button} variant="outline-warning">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="100"
+                    height="100"
+                    fill="currentColor"
+                    className="bi bi-shield-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 62.456 62.456 0 0 1 5.072.56z" />
+                  </svg>
+                  <h3>Seguridad</h3>
+                </Button>{" "}
+              </a>
+            </Link>
           </Col>
         </Row>
       </Container>
