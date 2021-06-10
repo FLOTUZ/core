@@ -8,12 +8,12 @@ import DefaultLayout from "components/layouts/DefaultLayout";
 function Dashboard() {
   return (
     <>
-      <DefaultLayout>
+      <>
         <div className={styles.containerMain}>
           <StyleTitle />
           <Body/>
         </div>
-      </DefaultLayout>
+      </>
     </>
   );
 }

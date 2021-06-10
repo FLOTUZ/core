@@ -20,7 +20,7 @@ function Productos() {
   };
 
   return (
-    <DefaultLayout>
+    <>
       <Head>
         <title> Productos </title>
         <link rel="icon" href="/favicon.ico" />
@@ -40,7 +40,7 @@ function Productos() {
         columns={columns}
         options={options}
       />
-    </DefaultLayout>
+    </>
   );
 }
 

@@ -13,7 +13,7 @@ import DefaultLayout from "components/layouts/DefaultLayout";
 function Nuevo() {
 
   return (
-    <DefaultLayout>
+    <>
       <Breadcrumb>
         <Breadcrumb.Item href="/productos">Productos</Breadcrumb.Item>
         <Breadcrumb.Item active>Nuevo</Breadcrumb.Item>
@@ -74,7 +74,7 @@ function Nuevo() {
       <Container>
         
       </Container>
-    </DefaultLayout>
+    </>
   );
 }
 

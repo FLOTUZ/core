@@ -1,5 +1,5 @@
 .menu{
-    height: auto;
+    height: 100%;    
 }
 
 .main{
@@ -8,4 +8,5 @@
 
 .row{
     margin: 0px;
+    height: 100%;
 }
