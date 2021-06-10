@@ -15,6 +15,7 @@ function Pedidos() {
     textLabels: {
       body: {
         noMatch: "Lo siento,no se encontro",
+        
         toolTip: "Sort",
       },
     }
@@ -37,5 +38,4 @@ function Pedidos() {
     </DefaultLayout>
   );
 }
-
 export default Pedidos;
