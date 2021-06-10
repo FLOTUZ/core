@@ -25,6 +25,7 @@ import {useRouter} from "next/router"
 function NavBar() {
   const [collapsed, setCollapsed] = useState(false);
   const router = useRouter()
+
   
   //Aca pon la ruta como un objeto
   let rutas = [

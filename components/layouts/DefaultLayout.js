@@ -8,7 +8,9 @@ function DefaultLayout(props) {
   return (
     <>
       <Row className={styles.row}>
-      <NavBar />
+        <Col md="auto" className={styles.nav}>
+          <NavBar />
+        </Col>
         <Col className={styles.main}>{props.children}</Col>
       </Row>
     </>
