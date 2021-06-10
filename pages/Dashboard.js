@@ -1,9 +1,11 @@
 import styles from "../styles/Dashboard.module.css";
 import Head from "next/head";
 import { Card, Container, Row, Col } from "react-bootstrap";
-import { Line } from 'react-chartjs-2';
-import Table from 'react-bootstrap/Table';
-import DefaultLayout from "components/layouts/DefaultLayout";
+import { Line } from "react-chartjs-2";
+import Table from "react-bootstrap/Table";
+import { BsFillInboxesFill, BsWatch } from "react-icons/bs";
+import { FaStore } from "react-icons/fa";
+import { AiFillLike } from "react-icons/ai";
 
 function Dashboard() {
   return (
@@ -11,7 +13,7 @@ function Dashboard() {
       <>
         <div className={styles.containerMain}>
           <StyleTitle />
-          <Body/>
+          <Body />
         </div>
       </>
     </>
@@ -29,8 +31,8 @@ function StyleTitle() {
 function Body() {
   let text = [
     "Productos en BD ASPEL",
-    "Ventas a resgistrar en ASPEL",
-    "Productos publicados en tiendas",
+    "Ventas no registradas",
+    "Publicados en tiendas",
     "Ventas registradas en ASPEL",
   ];
   let value = [60, 16, 43, 64];
@@ -40,16 +42,20 @@ function Body() {
       <div>
         <Row className={styles.cards}>
           <Col>
-            <Cards text={text[0]} value={value[0]} />
+            <Cards
+              text={text[0]}
+              value={value[0]}
+              icon={<BsFillInboxesFill />}
+            />
           </Col>
           <Col>
-            <Cards text={text[1]} value={value[1]} />
+            <Cards text={text[1]} value={value[1]} icon={<BsWatch />} />
           </Col>
           <Col>
-            <Cards text={text[2]} value={value[2]} />
+            <Cards text={text[2]} value={value[2]} icon={<FaStore />} />
           </Col>
           <Col>
-            <Cards text={text[3]} value={value[3]} />
+            <Cards text={text[3]} value={value[3]} icon={<AiFillLike />} />
           </Col>
         </Row>
       </div>
@@ -108,18 +114,22 @@ function Graph() {
   );
 }
 
-function Cards({ text, value }) {
+function Cards({ text, value, icon }) {
   return (
-    <Card style={{ width: "18rem", height: "8rem" }}>
+    <Card style={{ width: "12rem", height: "10 rem" }} className={styles.card}>
       <Card.Body>
-        <Card.Title>{text}</Card.Title>
+        <Card.Title>
+          {text}
+          <br />
+          {icon}
+        </Card.Title>
         <Card.Text style={{ textAlign: "center" }}>{value}</Card.Text>
       </Card.Body>
     </Card>
   );
 }
 
-function AmazonSells(){
+function AmazonSells() {
   return (
     <div>
       <Table striped bordered hover>
@@ -146,7 +156,7 @@ function AmazonSells(){
   );
 }
 
-function MercadoLibreSells(){
+function MercadoLibreSells() {
   return (
     <div>
       <Table striped bordered hover>
@@ -173,7 +183,7 @@ function MercadoLibreSells(){
   );
 }
 
-function WooCommerceSells(){
+function WooCommerceSells() {
   return (
     <div>
       <Table striped bordered hover>
