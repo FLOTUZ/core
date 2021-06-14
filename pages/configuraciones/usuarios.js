@@ -6,12 +6,14 @@ import { Breadcrumb } from "react-bootstrap";
 
 function Usuarios() {
   return (
-    <div className={styles.container}>
+    <>
+      <Breadcrumb>
+        <Breadcrumb.Item href="/configuraciones">
+          Configuraciones
+        </Breadcrumb.Item>
+        <Breadcrumb.Item active>Bitacora de Usuarios</Breadcrumb.Item>
+      </Breadcrumb>
       <h1>Usuarios</h1>
-        <Breadcrumb>
-                <Breadcrumb.Item href="/configuraciones">Configuraciones</Breadcrumb.Item>
-                <Breadcrumb.Item active>Bitacora de Usuarios</Breadcrumb.Item>
-            </Breadcrumb>
 
       <Table hover>
         <thead class="thead-dark">
@@ -131,7 +133,7 @@ function Usuarios() {
           </tr>
         </tbody>
       </Table>
-    </div>
+    </>
   );
 }
 export default Usuarios;

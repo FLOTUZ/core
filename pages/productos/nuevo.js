@@ -11,7 +11,6 @@ import {
 import DefaultLayout from "components/layouts/DefaultLayout";
 
 function Nuevo() {
-
   return (
     <>
       <Breadcrumb>
@@ -24,9 +23,6 @@ function Nuevo() {
           <Col>
             <Button variant="primary">Guardar</Button>{" "}
             <Button variant="outline-danger">Descartar</Button>{" "}
-          </Col>
-
-          <Col>
             <Button variant="outline-success">Publicar</Button>
           </Col>
         </Row>
@@ -70,10 +66,8 @@ function Nuevo() {
           </Col>
         </Row>
       </Container>
-      <br/>
-      <Container>
-        
-      </Container>
+      <br />
+      <Container></Container>
     </>
   );
 }
