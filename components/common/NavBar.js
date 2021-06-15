@@ -49,11 +49,6 @@ function NavBar() {
         },
         {
           key: 2,
-          name: "Agregar",
-          route: "/productos/nuevo",
-        },
-        {
-          key: 3,
           name: "Detalles",
           route: "/productos/detalles",
         },
