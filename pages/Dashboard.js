@@ -69,7 +69,7 @@ function Body() {
         </div>
         <AmazonSells />
       </div>
-      <div className={styles.box}>
+      <div className={ styles.box }>
         <div>
           <h2>Ultimos productos vendidos: Mercado Libre</h2>
           <p>Monto: </p>

@@ -5,9 +5,9 @@ import { useWindowSize } from "react-use";
 
 function DefaultLayout(props) {
   const { width, height } = useWindowSize();
+  height
   return (
     <>
-      {console.log(height)}
       <Row className={styles.row} style={{ height: height }}>
         <Col md="auto" className={styles.nav}>
           <NavBar />
