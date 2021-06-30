@@ -13,31 +13,31 @@ function Informacion() {
       <h1>Informacion del sistema</h1>
       <div className={styles.card}>
         <h3> Amazon</h3>
-        <label for="inputPassword5" class="form-label"></label>
+        <label htmlFor="inputPassword5" className="form-label"></label>
         <input
           type="password"
-          id="inputPassword5"
-          class="form-control "
+          id="apiAmazon"
+          className="form-control "
           placeholder="Api key Amazon"
           aria-describedby="passwordHelpBlock"
         ></input>
 
         <h3>Mercado Libre </h3>
-        <label for="inputPassword5" class="form-label"></label>
+        <label htmlFor="inputPassword5" className="form-label"></label>
         <input
           type="password"
-          id="inputPassword5"
-          class="form-control"
+          id="apiMercadoLibre"
+          className="form-control"
           placeholder="Api key Mercado Libre"
           aria-describedby="passwordHelpBlock"
         ></input>
 
         <h3>WooComerce</h3>
-        <label for="inputPassword5" class="form-label"></label>
+        <label htmlFor="inputPassword5" className="form-label"></label>
         <input
           type="password"
-          id="inputPassword5"
-          class="form-control"
+          id="apiWooCommerce"
+          className="form-control"
           placeholder="Api key WooCommerce"
           aria-describedby="passwordHelpBlock"
         ></input>
