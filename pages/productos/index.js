@@ -2,6 +2,7 @@ import Head from "next/head";
 import React, { useState } from "react";
 import { Button, Breadcrumb } from "react-bootstrap";
 import MUIDataTable from "mui-datatables";
+import Papa from "papaparse";
 
 function Productos() {
   const columns = ["Nombre", "Precio", "En Inventario", "Publicado en"];
@@ -76,7 +77,13 @@ function Temp(){
   }
 
   const imprimir=()=>{
-    console.log(csv);
+    console.log(csv[0]);
+
+    Papa.parse(csv[0], {
+      complete: function(results) {
+        console.log(results);
+      }
+    });
   }
   
   return(
