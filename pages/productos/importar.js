@@ -26,7 +26,6 @@ function Importar() {
           <Row>
             <Col>
               <Button variant="outline-primary">Importar</Button>{" "}
-              <Button variant="outline-warning">Test</Button>{" "}
               <Button variant="outline-success">Cargar nuevo archivo</Button>{" "}
               <Button variant="danger">Cancelar</Button>
             </Col>
