@@ -291,7 +291,7 @@ function Chooser(){
             borderStyle: "solid", borderWidth: "1px", width: "170px", textAlign:"center", borderRadius: "5px"
           }}>Imagen de dropbox</div>    
         </DropboxChooser>
-        <img src={url} width="100px" height="100px" alt="" style={{visibility: visible}} />
+        <img src={url} width="100px" height="100px" alt="" style={{visibility: visible, margin: "2% 7%"}} />
     </div>
   );
 }
