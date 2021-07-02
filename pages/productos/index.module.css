@@ -1,0 +1,51 @@
+
+
+.buttonWC{
+    
+    background-color: #8f60d1;
+    color: beige;
+
+}
+
+.buttonWC:hover {
+    background-color:#674399;
+    color: beige;
+}
+
+.buttonWC::selection {
+    background-color: rgb(174, 119, 224);
+}
+
+
+
+.buttonAM{
+    background-color:#f08804;
+    color: white;
+
+}
+
+.buttonAM:hover {
+    background-color: #c88a39;
+    color: whitesmoke;
+}
+
+.buttonAM::selection {
+    background-color: #f08804;
+}
+
+
+.buttonML{
+    
+    background-color:#d1c12f;
+    color: white;
+}
+
+.buttonML:hover {
+    background-color:#bdaa03;
+    color: whitesmoke;
+}
+
+.buttonML::selection {
+    background-color:#e7d31f;
+    background: white !important;
+}
