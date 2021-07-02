@@ -61,15 +61,6 @@ function Detalles() {
                     </Form>
                   </Col>
                   <Col>
-                    <Image
-                      src="../headphones.jpg"
-                      alt="Audifonos Unsplash"
-                      thumbnail="true"
-                      height="100px"
-                      width="109px"
-                      rounded
-                    />
-                    <Form.File />
                     <Chooser/>
                   </Col>
                 </Row>
@@ -281,24 +272,26 @@ function TextPanel(){
 
 function Chooser(){
   const [url, setUrl] = useState("");
+  const [visible, setVisible] = useState("hidden");
 
   function objectChoosed(file){
     console.log(file);
-    setUrl(file[0].thumbnailLink);
+    setUrl(file[0].link);
+    setVisible("visible");
   }
 
   return(
     <div>
-      <p>Selecciona una imagen</p>
-      <div>
         <DropboxChooser 
           appKey={'mfkawx9u75a6l1k'}
           success={objectChoosed}
           multiselect={false}
-          >   
+          >
+          <div className="dropbox-button" style={{ 
+            borderStyle: "solid", borderWidth: "1px", width: "170px", textAlign:"center", borderRadius: "5px"
+          }}>Imagen de dropbox</div>    
         </DropboxChooser>
-        <img src={url} width="200px" height="200px" alt="" />
-      </div>
+        <img src={url} width="200px" height="200px" alt="" style={{visibility: visible}} />
     </div>
   );
 }
