@@ -8,7 +8,7 @@ function DefaultLayout(props) {
   height
   return (
     <>
-      <Row className={styles.row} style={{ height: height }}>
+      <Row className={styles.row} style={{ height: "100em" }}>
         <Col md="auto" className={styles.nav}>
           <NavBar />
         </Col>
