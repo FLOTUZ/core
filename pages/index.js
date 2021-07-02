@@ -4,6 +4,7 @@ import styles from "../styles/Home.module.css";
 import { useState } from "react";
 import { Form, Button, Navbar, Alert } from "react-bootstrap";
 const axios = require("axios");
+import Router from "next/router";
 
 export default function Login() {
   //Manejador de estado de los inputs
@@ -18,20 +19,22 @@ export default function Login() {
 
     axios({
       method: "post",
-      url: "https://api-the-core.herokuapp.com/login",
-      body: {
+      url: "http://localhost:4002/login",
+      params: {
         email: email,
         password: password,
       },
     })
       .then((response) => {
-        console.log(response)
+        response.data.acceso == true
+          ? Router.push("/Dashboard")
+          : setMsg(
+              <Alert variant="danger">Oops! Los datos son incorrectos</Alert>
+            );
       })
       .catch((error) => {
         console.log(error);
       });
-
-    setMsg(<Alert variant="danger">Oops! Los datos son incorrectos</Alert>);
   };
 
   return (
