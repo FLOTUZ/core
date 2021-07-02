@@ -1,0 +1,15 @@
+.title {
+    margin-top: 50mm;
+    font-size: 2px;
+    text-align: center;
+    letter-spacing: 4px;
+  }
+
+  .title2 {
+    margin: 120;
+    color: #c2c2a3;
+    line-height: 1.15;
+    font-size: 2rem;
+    text-align: center;
+    letter-spacing: 3px;
+  }
