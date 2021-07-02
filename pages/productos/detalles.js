@@ -287,9 +287,7 @@ function Chooser(){
           success={objectChoosed}
           multiselect={false}
           >
-          <div className="dropbox-button" style={{ 
-            borderStyle: "solid", borderWidth: "1px", width: "170px", textAlign:"center", borderRadius: "5px"
-          }}>Imagen de dropbox</div>    
+          <Button className="dropbox-button">Imagen de dropbox</Button>    
         </DropboxChooser>
         <img src={url} width="100px" height="100px" alt="" style={{visibility: visible, margin: "2% 7%"}} />
     </div>
