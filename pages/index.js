@@ -3,32 +3,33 @@ import styles from "../styles/Home.module.css";
 
 import { useState } from "react";
 import { Form, Button, Navbar, Alert } from "react-bootstrap";
+const axios = require("axios");
 
 export default function Login() {
-
   //Manejador de estado de los inputs
   const [msg, setMsg] = useState("");
 
-  //Manejador de estado de mi login
-  const [loginData, setLoginData] = useState({
-    userMail: "",
-    userPassword: "",
-  });
-
-  //Manejador de cambio en las cajas de texto
-  const handleInputChange = (event) => {
-    setLoginData({
-      ...loginData,
-      [event.target.name]: event.target.value,
-    });
-  };
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   //Se verifica el usuario
   const userVerification = (event) => {
     event.preventDefault();
-    console.log("Hola bb");
 
-    {/* Acá llamamos a la api de atenticación*/}
+    axios({
+      method: "post",
+      url: "https://api-the-core.herokuapp.com/login",
+      body: {
+        email: email,
+        password: password,
+      },
+    })
+      .then((response) => {
+        console.log(response)
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
     setMsg(<Alert variant="danger">Oops! Los datos son incorrectos</Alert>);
   };
@@ -45,7 +46,9 @@ export default function Login() {
             <Form.Group>
               <Form.Label>Usuario</Form.Label>
               <Form.Control
-                onChange={handleInputChange}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
                 onClick={() => setMsg("")}
                 type="email"
                 placeholder="Ingresa el Email"
@@ -58,7 +61,9 @@ export default function Login() {
             <Form.Group>
               <Form.Label>Contraseña</Form.Label>
               <Form.Control
-                onChange={handleInputChange}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
                 onClick={() => setMsg("")}
                 type="password"
                 placeholder="Contraseña"
@@ -74,7 +79,6 @@ export default function Login() {
               variant="primary"
               type="submit"
               size="lg"
-              href="/Dashboard"
               block
             >
               Ingresar
