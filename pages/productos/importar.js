@@ -11,6 +11,7 @@ import {
   Tab,
   Nav,
   Tabs,
+  Table,
 } from "react-bootstrap";
 
 function Importar() {
@@ -36,89 +37,89 @@ function Importar() {
   
         <br />
 
-       <Row>
-            <Col>
-        
-                <Card border="secondary" style={{ width: "auto" }}>
-                    <Card.Body>
-                        <Row>
-
-                            <Col>
-                                <Form>
-                                    <Form.Label>Id externo</Form.Label>
-                                    <select className="form-control ds-input" readOnly>
-                                    <option>Id externo...</option>
-                                    <option>....</option>
-                                    </select>
-                                </Form>
-                            </Col>
-
-                            <Col>
-                                <Form>
-                                    <Form.Label>Nombre</Form.Label>
-                                    <select className="form-control ds-input" readOnly>
-                                    <option>Nombre...</option>
-                                    <option>....</option>
-                                    </select>
-                                </Form>
-                            </Col>
-
-                            <Col>
-                                <Form>
-                                    <Form.Label>Tipo de producto</Form.Label>
-                                    <select className="form-control ds-input" readOnly>
-                                    <option>Tipo de producto...</option>
-                                    <option>....</option>
-                                    </select>
-                                </Form>
-                            </Col>
-
-                            <Col>
-                                <Form>
-                                    <Form.Label>Referencia interna</Form.Label>
-                                    <select className="form-control ds-input" readOnly>
-                                    <option>Referencia interna...</option>
-                                    <option>....</option>
-                                    </select>
-                                </Form>
-                            </Col>
-
-                            <Col>
-                                <Form>
-                                    <Form.Label>Código de barras</Form.Label>
-                                    <select className="form-control ds-input" readOnly>
-                                    <option>Código de barras...</option>
-                                    <option>....</option>
-                                    </select>
-                                </Form>
-                            </Col>
-
-                            <Col>
-                                <Form>
-                                    <Form.Label>Costo</Form.Label>
-                                    <select className="form-control ds-input" readOnly>
-                                    <option>$ Costo...</option>
-                                    <option>....</option>
-                                    </select>
-                                </Form>
-                            </Col>
-
-                            <Col>
-                                <Form>
-                                    <Form.Label>Peso</Form.Label>
-                                    <select className="form-control ds-input" readOnly>
-                                    <option>Peso...</option>
-                                    <option>....</option>
-                                    </select>
-                                </Form>
-                            </Col>
-                        </Row>
-
-
-                    </Card.Body>
-                </Card>
-            </Col>
-        </Row> 
+        <Table striped bordered hover>
+            <thead>
+                <tr>
+                <th>
+                    <Col>
+                        <Form>
+                            <Form.Label>Id externo</Form.Label>
+                                <select className="form-control ds-input" readOnly>
+                                <option>Id...</option>
+                                <option>....</option>
+                                </select>
+                        </Form>
+                    </Col>
+                </th>
+                <th>
+                    <Col>
+                         <Form>
+                            <Form.Label>Nombre</Form.Label>
+                                <select className="form-control ds-input" readOnly>
+                                <option>Nombre...</option>
+                                <option>....</option>
+                                </select>
+                        </Form>
+                    </Col>
+                </th>
+                <th>
+                    <Col>
+                        <Form>
+                            <Form.Label>Tipo de producto</Form.Label>
+                                <select className="form-control ds-input" readOnly>
+                                <option>Tipo...</option>
+                                <option>....</option>
+                                </select>
+                        </Form>
+                    </Col>
+                </th>
+                <th>
+                    <Col>
+                        <Form>
+                            <Form.Label>Referencia interna</Form.Label>
+                                <select className="form-control ds-input" readOnly>
+                                <option>Referencia...</option>
+                                <option>....</option>
+                                </select>
+                        </Form>
+                    </Col>
+                </th>
+                <th>
+                    <Col>
+                        <Form>
+                            <Form.Label>Código de barras</Form.Label>
+                                <select className="form-control ds-input" readOnly>
+                                <option>Código...</option>
+                                <option>....</option>
+                                </select>
+                            </Form>
+                    </Col>
+                </th>
+                <th>
+                    <Col>
+                        <Form>
+                            <Form.Label>Costo</Form.Label>
+                                <select className="form-control ds-input" readOnly>
+                                <option>$...</option>
+                                <option>....</option>
+                                </select>
+                            </Form>
+                    </Col>
+                </th>
+                <th>
+                    <Col>
+                        <Form>
+                            <Form.Label>Peso</Form.Label>
+                                <select className="form-control ds-input" readOnly>
+                                <option>Peso...</option>
+                                <option>....</option>
+                                </select>
+                        </Form>
+                    </Col>
+                </th>
+                </tr>
+            </thead>
+        </Table>
     
   
       </>
