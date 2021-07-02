@@ -74,6 +74,7 @@ export default function Login() {
               variant="primary"
               type="submit"
               size="lg"
+              href="/Dashboard"
               block
             >
               Ingresar
