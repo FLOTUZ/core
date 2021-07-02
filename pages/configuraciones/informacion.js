@@ -26,9 +26,16 @@ function Informacion() {
         <label htmlFor="inputPassword5" className="form-label"></label>
         <input
           type="password"
-          id="apiMercadoLibre"
+          id="consumerKey"
           className="form-control"
-          placeholder="Api key Mercado Libre"
+          placeholder="Api key Mercado Libre: consumer_key: ck_xxxxxxxxxxxxxxx"
+          aria-describedby="passwordHelpBlock"
+        ></input>
+        <input
+          type="password"
+          id="consumerSecret"
+          className="form-control"
+          placeholder="Api key Mercado Libre: consumer_secret: cs_xxxxxxxxxxxxxxxx"
           aria-describedby="passwordHelpBlock"
         ></input>
 

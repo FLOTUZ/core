@@ -10,6 +10,8 @@ import {
   Tab,
   Tabs,
 } from "react-bootstrap";
+import React, { useState, useEffect, useRef } from 'react';
+import DropboxChooser from 'react-dropbox-chooser';
 
 function Detalles() {
   return (
@@ -65,6 +67,7 @@ function Detalles() {
                       rounded
                     />
                     <Form.File />
+                    <Chooser/>
                   </Col>
                 </Row>
               </Card.Body>
@@ -149,6 +152,11 @@ function InformacionGeneral() {
           </Form>
         </Col>
       </Row>
+      <Row>
+        <Col>
+          <TextPanel/>
+        </Col>
+      </Row>
     </Col>
   );
 }
@@ -229,6 +237,55 @@ function Publicaciones() {
       </Row>
       <br />
     </Col>
+  );
+}
+
+function TextPanel(){
+  const editorRef = useRef()
+  const [editorLoaded, setEditorLoaded] = useState(false)
+  const { CKEditor, ClassicEditor } = editorRef.current || {}
+
+  useEffect(() => {
+    editorRef.current = {
+      // CKEditor: require('@ckeditor/ckeditor5-react'), // depricated in v3
+      CKEditor: require('@ckeditor/ckeditor5-react').CKEditor, // v3+
+      ClassicEditor: require('@ckeditor/ckeditor5-build-classic')
+    }
+    setEditorLoaded(true)
+  }, [])
+
+  return editorLoaded ? (
+    <CKEditor
+      editor={ClassicEditor}
+      config={{
+        //toolbar: [ ['Heading'],['Bold'],['Italic'],['BulletedList'],['NumberedList'],['BlockQuote'],['Decreaseindent']]
+      }}
+      data='<p>Escribe aquí...</p>'
+      onReady={editor => {
+        // You can store the "editor" and use when it is needed.
+        console.log('Editor is ready to use!', editor)
+      }}
+      onChange={(event, editor) => {
+        const data = editor.getData()
+        //console.log({ event, editor, data })
+        console.log(data)
+      }}
+    />
+  ) : (
+    <div>Editor loading</div>
+  )
+}
+
+function Chooser(){
+  return(
+    <div>
+      <p>Selecciona una imagen</p>
+      <div>
+        <DropboxChooser 
+          appKey={'mfkawx9u75a6l1k'}>     
+        </DropboxChooser>
+      </div>
+    </div>
   );
 }
 
