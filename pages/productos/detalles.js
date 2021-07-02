@@ -276,7 +276,7 @@ function Chooser(){
 
   function objectChoosed(file){
     console.log(file);
-    setUrl(file[0].link);
+    setUrl(file[0].thumbnailLink);
     setVisible("visible");
   }
 
@@ -291,7 +291,7 @@ function Chooser(){
             borderStyle: "solid", borderWidth: "1px", width: "170px", textAlign:"center", borderRadius: "5px"
           }}>Imagen de dropbox</div>    
         </DropboxChooser>
-        <img src={url} width="200px" height="200px" alt="" style={{visibility: visible}} />
+        <img src={url} width="100px" height="100px" alt="" style={{visibility: visible}} />
     </div>
   );
 }
