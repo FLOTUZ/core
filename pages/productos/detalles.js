@@ -1,3 +1,4 @@
+
 import {
   Breadcrumb,
   Button,
@@ -12,6 +13,8 @@ import {
 } from "react-bootstrap";
 import React, { useState, useEffect, useRef } from 'react';
 import DropboxChooser from 'react-dropbox-chooser';
+import  style from "./index.module.css"
+
 
 function Detalles() {
   return (
@@ -27,10 +30,10 @@ function Detalles() {
             <Button variant="primary">Guardar</Button>{" "}
             <Button variant="outline-danger">Descartar</Button>{" "}
             </Col>
-            <Col className="publicar">
-              <Button variant="danger">WooCommerce</Button>{" "}
-              <Button variant="info">Mercado Libre</Button>{" "}
-              <Button variant="warning">Amazon</Button>{" "}
+            <Col>
+              <Button className={style.buttonWC} >WooCommerce</Button>{" "}
+              <Button  className={style.buttonAM}>Amazon</Button>{" "}
+              <Button  className={style.buttonML}>Mercado Libre</Button>{" "}
             </Col>
           
         </Row>
