@@ -3,12 +3,9 @@ import React, { useState } from "react";
 import { Button, Breadcrumb } from "react-bootstrap";
 import MUIDataTable from "mui-datatables";
 import Papa from "papaparse";
-import Link from "next/link";
-
+const axios = require("axios");
 
 function Productos() {
-
-
   const columns = ["Nombre", "Precio", "En Inventario", "Publicado en"];
 
   const data = [
@@ -45,58 +42,69 @@ function Productos() {
     filterType: "checkbox",
   };
 
+  const traerDatos = () => {
+    axios({
+      method: "get",
+      url: "",
+      responseType: "stream",
+    }).then( (response) => {
+      console.log(response);
+    }).catch((error)=>{
+      console.log(error)
+    });
+  };
+
   return (
     <>
-
-
       <Breadcrumb>
         <Breadcrumb.Item active>Productos</Breadcrumb.Item>
       </Breadcrumb>
 
-      <div>
-        <Link href="/productos/importar" style={{border: "solid"}}><Button>Importar CSV</Button></Link>
-      </div>
+      <Temp />
 
-      <br/>
+      <br />
 
       <MUIDataTable
         title={""}
         data={data}
         columns={columns}
-        options={options}/>
-
-        
+        options={options}
+      />
     </>
   );
 }
 
-
-function Temp(){
+function Temp() {
   const [csv, setCsv] = useState(null);
 
-  const subirCsv=e=>{
+  const subirCsv = (e) => {
     setCsv(e);
-  }
+  };
 
-  const imprimir=()=>{
+  const imprimir = () => {
     console.log(csv[0]);
 
     Papa.parse(csv[0], {
-      complete: function(results) {
+      complete: function (results) {
         console.log(results);
-      }
+      },
     });
-  }
-  
-  return(
-    <div>
-      <input variant="outline-warning" type="file" name="files" multiple onChange={(e)=>subirCsv(e.target.files)} />      
-      <Button variant="outline-success" onClick={()=>imprimir()} >Subir </Button>
-    </div>
-    
-  );
-  
-}
+  };
 
+  return (
+    <div>
+      <input
+        variant="outline-warning"
+        type="file"
+        name="files"
+        multiple
+        onChange={(e) => subirCsv(e.target.files)}
+      />
+      <Button variant="outline-success" onClick={() => imprimir()}>
+        Subir{" "}
+      </Button>
+    </div>
+  );
+}
 
 export default Productos;

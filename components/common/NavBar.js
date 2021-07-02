@@ -44,11 +44,16 @@ function NavBar() {
       subroutes: [
         {
           key: 1,
+          name: "Importar",
+          route: "/productos/importar",
+        },
+        {
+          key: 2,
           name: "Productos",
           route: "/productos",
         },
         {
-          key: 2,
+          key: 3,
           name: "Detalles",
           route: "/productos/detalles",
         },

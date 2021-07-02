@@ -50,7 +50,6 @@ function Importar() {
                 <input variant="outline-warning" type="file" name="files" multiple onChange={(e)=>subirCsv(e.target.files)} />      
                 <Button variant="outline-success" onClick={()=>imprimir()} >Subir </Button>
               </div>
-              <Button variant="outline-success">Cargar nuevo archivo</Button>{" "}
               <Button variant="danger">Cancelar</Button>
             </Col>
           </Row>
