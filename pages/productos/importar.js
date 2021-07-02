@@ -1,4 +1,5 @@
 import DefaultLayout from "components/layouts/DefaultLayout";
+import MUIDataTable from "mui-datatables";
 import {
   Breadcrumb,
   Button,
@@ -17,49 +18,74 @@ import Papa from "papaparse";
 import React, { useState } from "react";
 
 function Importar() {
-    const [csv, setCsv] = useState(null);
-    let temp = "";
+  const [csv, setCsv] = useState(null);
+  const [header, setHeader] = useState([]);
+  const [data, setData] = useState([]);
+  let temp = [];
 
-    const subirCsv=e=>{
-      setCsv(e);
-    }
-  
-    const imprimir=()=>{
-      console.log(csv[0]);
-  
-      Papa.parse(csv[0], {
-        complete: function(results) {
-          //console.log(results);
-          temp = results.data;
-          console.log(temp);
-        }
-      });
-    }
+  const subirCsv = (e) => {
+    setCsv(e);
+  };
 
-    return (
-      <>
-        <Breadcrumb>
-          <Breadcrumb.Item href="/productos">Productos</Breadcrumb.Item>
-          <Breadcrumb.Item active>Importar</Breadcrumb.Item>
-        </Breadcrumb>
-  
-        <Container>
-          <Row>
-            <Col>
-              <div>
-                <input variant="outline-warning" type="file" name="files" multiple onChange={(e)=>subirCsv(e.target.files)} />      
-                <Button variant="outline-success" onClick={()=>imprimir()} >Subir </Button>
-              </div>
-              <Button variant="danger">Cancelar</Button>
-            </Col>
-          </Row>
-  
-          <br />
-        </Container>
-  
+  const imprimir = () => {
+    Papa.parse(csv[0], {
+      complete: function (results) {
+        //console.log(results);
+        temp = results.data;
+
+        //Se obtienen los headers del CSV
+        setHeader(temp[0].slice(0, 12));
+        //se traen los datos
+        setData(temp.slice(1));
+      },
+    });
+  };
+
+  const options = {
+    filterType: "checkbox",
+  };
+
+  return (
+    <>
+      <Breadcrumb>
+        <Breadcrumb.Item href="/productos">Productos</Breadcrumb.Item>
+        <Breadcrumb.Item active>Importar</Breadcrumb.Item>
+      </Breadcrumb>
+
+      <Container>
+        <Row>
+          <Col>
+            <div>
+              <input
+                variant="outline-warning"
+                type="file"
+                name="files"
+                multiple
+                onChange={(e) => subirCsv(e.target.files)}
+              />
+              <Button variant="outline-success" onClick={() => imprimir()}>
+                Subir{" "}
+              </Button>
+            </div>
+            <Button
+              variant="danger"
+              onClick={() => {
+                setData([]);
+                setHeader([]);
+              }}
+            >
+              Limpiar
+            </Button>
+          </Col>
+        </Row>
+
         <br />
+      </Container>
 
-        <Table striped bordered hover>
+      <br />
+      <MUIDataTable title={""} data={data} columns={header} options={options} />
+
+      {/* <Table striped bordered hover>
             <thead>
                 <tr>
                 <th>
@@ -142,60 +168,72 @@ function Importar() {
                 </tr>
             </thead>
             <Tabla temp/>
-        </Table>
-    
-  
-      </>
-    );
-  }
+        </Table> */}
+    </>
+  );
+}
 
-  function Tabla(datos){
-    let cont = 1;
-    let size = datos.lenght;
-    let mostrar = "";
-    if(size!=null){
-        while(cont < size){
-            mostrar = "<tr><th>"+datos[cont][0]+"</th><th>"+datos[cont][2]+"</th><th>"+datos[cont][3]+"</th><th>"+datos[cont][1]+"</th><th>"+datos[cont][4]+"</th><th>"+datos[cont][8]+"</th><th>"+datos[cont][11]+"</th></tr>";
-            return(
-                <tbody>
-                    {mostrar}
-                </tbody>
-            );
-            cont++;
-        }
-    }else{
-        return(
-            <tbody>
-            </tbody>
-        );
+function Tabla(datos) {
+  let cont = 1;
+  let size = datos.lenght;
+  let mostrar = "";
+  if (size != null) {
+    while (cont < size) {
+      mostrar =
+        "<tr><th>" +
+        datos[cont][0] +
+        "</th><th>" +
+        datos[cont][2] +
+        "</th><th>" +
+        datos[cont][3] +
+        "</th><th>" +
+        datos[cont][1] +
+        "</th><th>" +
+        datos[cont][4] +
+        "</th><th>" +
+        datos[cont][8] +
+        "</th><th>" +
+        datos[cont][11] +
+        "</th></tr>";
+      return <tbody>{mostrar}</tbody>;
+      cont++;
     }
+  } else {
+    return <tbody></tbody>;
   }
+}
 
-  function CSVfiles(){
-    const [csv, setCsv] = useState(null);
+function CSVfiles() {
+  const [csv, setCsv] = useState(null);
 
-    const subirCsv=e=>{
-      setCsv(e);
-    }
-  
-    const imprimir=()=>{
-      console.log(csv[0]);
-  
-      Papa.parse(csv[0], {
-        complete: function(results) {
-          console.log(results);
-        }
-      });
-    }
-    
-    return(
-      <div>
-        <input variant="outline-warning" type="file" name="files" multiple onChange={(e)=>subirCsv(e.target.files)} />      
-        <Button variant="outline-success" onClick={()=>imprimir()} >Subir </Button>
-      </div>
-      
-    );
-    
-  }
+  const subirCsv = (e) => {
+    setCsv(e);
+  };
 
-  export default Importar;
+  const imprimir = () => {
+    console.log(csv[0]);
+
+    Papa.parse(csv[0], {
+      complete: function (results) {
+        console.log(results);
+      },
+    });
+  };
+
+  return (
+    <div>
+      <input
+        variant="outline-warning"
+        type="file"
+        name="files"
+        multiple
+        onChange={(e) => subirCsv(e.target.files)}
+      />
+      <Button variant="outline-success" onClick={() => imprimir()}>
+        Subir{" "}
+      </Button>
+    </div>
+  );
+}
+
+export default Importar;
