@@ -280,13 +280,24 @@ function TextPanel(){
 }
 
 function Chooser(){
+  const [url, setUrl] = useState("");
+
+  function objectChoosed(file){
+    console.log(file);
+    setUrl(file[0].thumbnailLink);
+  }
+
   return(
     <div>
       <p>Selecciona una imagen</p>
       <div>
         <DropboxChooser 
-          appKey={'mfkawx9u75a6l1k'}>     
+          appKey={'mfkawx9u75a6l1k'}
+          success={objectChoosed}
+          multiselect={false}
+          >   
         </DropboxChooser>
+        <img src={url} width="200px" height="200px" alt="" />
       </div>
     </div>
   );
