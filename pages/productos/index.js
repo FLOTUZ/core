@@ -4,7 +4,10 @@ import { Button, Breadcrumb } from "react-bootstrap";
 import MUIDataTable from "mui-datatables";
 import Papa from "papaparse";
 
+
 function Productos() {
+
+
   const columns = ["Nombre", "Precio", "En Inventario", "Publicado en"];
 
   const data = [
@@ -43,27 +46,24 @@ function Productos() {
 
   return (
     <>
-      <Head>
-        <title> Productos </title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+
 
       <Breadcrumb>
         <Breadcrumb.Item active>Productos</Breadcrumb.Item>
       </Breadcrumb>
 
-      <h1 className="Title" title="Productos">
-        Productos
-      </h1>
 
       <Temp/>
+
+      <br/>
 
       <MUIDataTable
         title={""}
         data={data}
         columns={columns}
-        options={options}
-      />
+        options={options}/>
+
+        
     </>
   );
 }
@@ -88,10 +88,12 @@ function Temp(){
   
   return(
     <div>
-      <input type="file" name="files" multiple onChange={(e)=>subirCsv(e.target.files)} />
-      <button onClick={()=>imprimir()} >Subir</button>
+      <input variant="outline-warning" type="file" name="files" multiple onChange={(e)=>subirCsv(e.target.files)} />      
+      <Button variant="outline-success" onClick={()=>imprimir()} >Subir </Button>
     </div>
+    
   );
+  
 }
 
 

@@ -28,7 +28,7 @@ function Pedidos() {
   return (
     <>
       <Breadcrumb>
-        <Breadcrumb.Item active>PEDIDOS</Breadcrumb.Item>
+        <Breadcrumb.Item active>Pedidos</Breadcrumb.Item>
       </Breadcrumb>
       <Container>
         <MUIDataTable
