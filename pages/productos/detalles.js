@@ -15,6 +15,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import DropboxChooser from 'react-dropbox-chooser';
 import  style from "./index.module.css"
 
+function upload(){
+  const [tipo, categoria, claveInterna, descripción, precio, weight, envío, 
+    setTipo, setCategoria, setClaveInterna, setDescripcion, setPrecio, setWeight, setEnvio] = useState("");
+}
 
 function Detalles() {
   return (
@@ -97,6 +101,12 @@ function Detalles() {
 }
 
 function InformacionGeneral() {
+  const [tipo, setTipo] = useState("");
+  const [categoria, setCategoria] = useState("");
+  const [claveInterna, setClaveInterna] = useState("");
+  const [descripcion, setDescripcion] = useState("");
+  const [precio, setPrecio] = useState("");
+
   return (
     <Col>
       <Row>
@@ -156,6 +166,8 @@ function InformacionGeneral() {
 }
 
 function Inventario() {
+  const [weight, setWeight] = useState("");
+
   return (
     <Col>
       <Row>

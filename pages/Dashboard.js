@@ -6,6 +6,7 @@ import Table from "react-bootstrap/Table";
 import { BsFillInboxesFill, BsWatch } from "react-icons/bs";
 import { FaStore } from "react-icons/fa";
 import { AiFillLike } from "react-icons/ai";
+import React, { useState } from 'react';
 
 function Dashboard() {
   return (
@@ -94,7 +95,7 @@ function Graph() {
         labels: ["Red", "Blue"],
         datasets: [
           {
-            label: "# of Votes",
+            label: "Ventas",
             data: [0, 10],
             backgroundColor: [
               "rgba(255, 99, 132, 0.2)",
@@ -130,6 +131,9 @@ function Cards({ text, value, icon }) {
 }
 
 function AmazonSells() {
+  const [productos, setProductos] = useState("");
+  const [cantidad, setCantidad] = useState("");
+
   return (
     <div>
       <Table striped bordered hover>
@@ -157,6 +161,9 @@ function AmazonSells() {
 }
 
 function MercadoLibreSells() {
+  const [productos, setProductos] = useState("");
+  const [cantidad, setCantidad] = useState("");
+
   return (
     <div>
       <Table striped bordered hover>
@@ -184,6 +191,9 @@ function MercadoLibreSells() {
 }
 
 function WooCommerceSells() {
+  const [productos, setProductos] = useState("");
+  const [cantidad, setCantidad] = useState("");
+
   return (
     <div>
       <Table striped bordered hover>

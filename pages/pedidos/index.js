@@ -1,9 +1,14 @@
 const { default: DefaultLayout } = require("components/layouts/DefaultLayout");
 const { Container, Breadcrumb } = require("react-bootstrap");
 import MUIDataTable from "mui-datatables";
+import React, { useState } from 'react';
 
 function Pedidos() {
   const columns = ["Nombre de Producto", "Fecha", "Cantidad", "Vendido en "];
+  const [productos, setProductos] = useState("");
+  const [cantidad, setCantidad] = useState("");
+  const [plataforma, setPlataforma] = useState("");
+  const [fecha, setFecha] = useState("");
 
   const data = [
     ["Microfono Shure 550L", "13/01/2021", "2", "WooCommerce"],
