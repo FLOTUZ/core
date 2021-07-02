@@ -93,16 +93,7 @@ function Temp() {
 
   return (
     <div>
-      <input
-        variant="outline-warning"
-        type="file"
-        name="files"
-        multiple
-        onChange={(e) => subirCsv(e.target.files)}
-      />
-      <Button variant="outline-success" onClick={() => imprimir()}>
-        Subir{" "}
-      </Button>
+
     </div>
   );
 }
