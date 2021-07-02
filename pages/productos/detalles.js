@@ -1,4 +1,3 @@
-import DefaultLayout from "components/layouts/DefaultLayout";
 import {
   Breadcrumb,
   Button,
@@ -9,7 +8,6 @@ import {
   Card,
   Image,
   Tab,
-  Nav,
   Tabs,
 } from "react-bootstrap";
 
@@ -26,8 +24,13 @@ function Detalles() {
           <Col>
             <Button variant="primary">Guardar</Button>{" "}
             <Button variant="outline-danger">Descartar</Button>{" "}
-            <Button variant="outline-success">Publicar</Button>
-          </Col>
+            </Col>
+            <Col className="publicar">
+              <Button variant="danger">WooCommerce</Button>{" "}
+              <Button variant="info">Mercado Libre</Button>{" "}
+              <Button variant="warning">Amazon</Button>{" "}
+            </Col>
+          
         </Row>
 
         <br />
@@ -134,22 +137,21 @@ function InformacionGeneral() {
         <Col>
           <Form>
             <Form.Label>Precio de venta en aspel</Form.Label>
-            <Form.Control type="text" placeholder="$0.00" readOnly/>
+            <Form.Control type="text" placeholder="$0.00" readOnly />
           </Form>
           <Form>
             <Form.Label>Unidad de medida</Form.Label>
-            <Form.Control type="text" placeholder="PZ" readOnly/>
+            <Form.Control type="text" placeholder="PZ" readOnly />
           </Form>
           <Form>
             <Form.Label>Unidad de medida de compra</Form.Label>
-            <Form.Control type="text" placeholder="PZ" readOnly/>
+            <Form.Control type="text" placeholder="PZ" readOnly />
           </Form>
         </Col>
       </Row>
     </Col>
   );
 }
-
 
 function Inventario() {
   return (
@@ -226,11 +228,6 @@ function Publicaciones() {
         </Col>
       </Row>
       <br />
-      <Row>
-        <div>
-          <h5>Publicar en:</h5>
-        </div>
-      </Row>
     </Col>
   );
 }
