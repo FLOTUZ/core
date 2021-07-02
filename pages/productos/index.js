@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Button, Breadcrumb } from "react-bootstrap";
 import MUIDataTable from "mui-datatables";
 import Papa from "papaparse";
+import Link from "next/link";
 
 
 function Productos() {
@@ -52,8 +53,9 @@ function Productos() {
         <Breadcrumb.Item active>Productos</Breadcrumb.Item>
       </Breadcrumb>
 
-
-      <Temp/>
+      <div>
+        <Link href="/productos/importar" style={{border: "solid"}}><Button>Importar CSV</Button></Link>
+      </div>
 
       <br/>
 

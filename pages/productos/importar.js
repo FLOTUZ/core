@@ -13,8 +13,29 @@ import {
   Tabs,
   Table,
 } from "react-bootstrap";
+import Papa from "papaparse";
+import React, { useState } from "react";
 
 function Importar() {
+    const [csv, setCsv] = useState(null);
+    let temp = "";
+
+    const subirCsv=e=>{
+      setCsv(e);
+    }
+  
+    const imprimir=()=>{
+      console.log(csv[0]);
+  
+      Papa.parse(csv[0], {
+        complete: function(results) {
+          //console.log(results);
+          temp = results.data;
+          console.log(temp);
+        }
+      });
+    }
+
     return (
       <>
         <Breadcrumb>
@@ -25,7 +46,10 @@ function Importar() {
         <Container>
           <Row>
             <Col>
-              <Button variant="outline-primary">Importar</Button>{" "}
+              <div>
+                <input variant="outline-warning" type="file" name="files" multiple onChange={(e)=>subirCsv(e.target.files)} />      
+                <Button variant="outline-success" onClick={()=>imprimir()} >Subir </Button>
+              </div>
               <Button variant="outline-success">Cargar nuevo archivo</Button>{" "}
               <Button variant="danger">Cancelar</Button>
             </Col>
@@ -64,7 +88,7 @@ function Importar() {
                 <th>
                     <Col>
                         <Form>
-                            <Form.Label>Tipo de producto</Form.Label>
+                            <Form.Label>Existencias</Form.Label>
                                 <select className="form-control ds-input" readOnly>
                                 <option>Tipo...</option>
                                 <option>....</option>
@@ -75,7 +99,7 @@ function Importar() {
                 <th>
                     <Col>
                         <Form>
-                            <Form.Label>Referencia interna</Form.Label>
+                            <Form.Label>Clave</Form.Label>
                                 <select className="form-control ds-input" readOnly>
                                 <option>Referencia...</option>
                                 <option>....</option>
@@ -86,7 +110,7 @@ function Importar() {
                 <th>
                     <Col>
                         <Form>
-                            <Form.Label>Código de barras</Form.Label>
+                            <Form.Label>Línea</Form.Label>
                                 <select className="form-control ds-input" readOnly>
                                 <option>Código...</option>
                                 <option>....</option>
@@ -97,7 +121,7 @@ function Importar() {
                 <th>
                     <Col>
                         <Form>
-                            <Form.Label>Costo</Form.Label>
+                            <Form.Label>Moneda</Form.Label>
                                 <select className="form-control ds-input" readOnly>
                                 <option>$...</option>
                                 <option>....</option>
@@ -108,7 +132,7 @@ function Importar() {
                 <th>
                     <Col>
                         <Form>
-                            <Form.Label>Peso</Form.Label>
+                            <Form.Label>Clave Unica</Form.Label>
                                 <select className="form-control ds-input" readOnly>
                                 <option>Peso...</option>
                                 <option>....</option>
@@ -118,10 +142,61 @@ function Importar() {
                 </th>
                 </tr>
             </thead>
+            <Tabla temp/>
         </Table>
     
   
       </>
     );
   }
+
+  function Tabla(datos){
+    let cont = 1;
+    let size = datos.lenght;
+    let mostrar = "";
+    if(size!=null){
+        while(cont < size){
+            mostrar = "<tr><th>"+datos[cont][0]+"</th><th>"+datos[cont][2]+"</th><th>"+datos[cont][3]+"</th><th>"+datos[cont][1]+"</th><th>"+datos[cont][4]+"</th><th>"+datos[cont][8]+"</th><th>"+datos[cont][11]+"</th></tr>";
+            return(
+                <tbody>
+                    {mostrar}
+                </tbody>
+            );
+            cont++;
+        }
+    }else{
+        return(
+            <tbody>
+            </tbody>
+        );
+    }
+  }
+
+  function CSVfiles(){
+    const [csv, setCsv] = useState(null);
+
+    const subirCsv=e=>{
+      setCsv(e);
+    }
+  
+    const imprimir=()=>{
+      console.log(csv[0]);
+  
+      Papa.parse(csv[0], {
+        complete: function(results) {
+          console.log(results);
+        }
+      });
+    }
+    
+    return(
+      <div>
+        <input variant="outline-warning" type="file" name="files" multiple onChange={(e)=>subirCsv(e.target.files)} />      
+        <Button variant="outline-success" onClick={()=>imprimir()} >Subir </Button>
+      </div>
+      
+    );
+    
+  }
+
   export default Importar;
